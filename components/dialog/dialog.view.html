@@ -1,0 +1,32 @@
+<div class="pp-wrp">
+    <div class="top-pp">
+        <h4>{{vm.msgObj.title}}</h4>
+    </div>
+    <div class="pp-content">
+        <form name="" novalidate>
+            <div ng-switch="vm.msgObj.id">
+                <div ng-switch-default class="wave">
+                    <p class="notice">{{vm.msgObj.msg}}</p>
+                </div>
+                <div ng-switch-when="3" class="wave">
+                    <p class="nomarl">Để sử dụng thuận tiện nhất, khách hàng tải ứng dụng tại đây</p>
+                    <p>
+                        <a ng-if="vm.msgObj.id2 === 'ios'" href="" ng-click="vm.goToApp(vm.msgObj.id2, vm.msgObj.msg)"><img src="assets/img/idex/ap1.png" alt="IOS" /></a>
+                        <a ng-if="vm.msgObj.id2 === 'android'" href="" ng-click="vm.goToApp(vm.msgObj.id2, vm.msgObj.msg)"><img src="assets/img/idex/ap2.png" alt="ANDROID" /></a>
+                        <a ng-if="vm.msgObj.id2 === 'window'" href="" ng-click="vm.goToApp(vm.msgObj.id2, vm.msgObj.msg)"><img src="assets/img/idex/ap3.png" alt="WINDOWN PHONE" /></a>
+                    </p>
+                    <p>
+                        <input type="checkbox" value="1" id="" ng-model="vm.checkbox" />
+                        <label for="squaredThree"><span>Không hiển thị thông báo này</span></label>
+                    </p>
+
+                </div>
+            </div>
+
+            <hr class="line-pp">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3"><button class="btn btn-default close-btn" ng-click="vm.closeDialog()">Đóng</button></div>
+            </div>
+        </form>
+    </div>
+</div>

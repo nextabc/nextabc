@@ -1,0 +1,40 @@
+<slick  class="{{cssclass}}" settings="slicksettings"  ng-if="::slickdata" init-onload="true" data="slickdata" >  
+    <div class="wrp-div" ng-repeat="vod in videolist">
+        <div class="col-mk-p">
+            <div class="mk-zip">
+                <div class="klj-img">
+                    <a href="" class="thumb-ikm"><img src="" alt="" /></a>
+                </div>
+            </div>
+            <div class="detail-ck">
+                <a href="">
+                    <ul>
+                        <li><img src="" alt=""></li>
+                        <li>Thá»�i sá»±(45p)</li>
+                    </ul>
+                    <h3>Cup C1: <br>Barca - Real Madrid</h3>
+                    <p><img src="" alt="">CÃ²n 15p</p>
+                    <div class="slide-minute"><span style="width:40%;"></span></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-mk-p">
+            <div class="mk-zip">
+                <div class="klj-img">
+                    <a href="" class="thumb-ikm"><img src="" alt="" /></a>
+                </div>
+            </div>
+            <div class="detail-ck">
+                <a href="">
+                    <ul>
+                        <li><img ng-src="{{constant.APIHost}}/api1/contents/pictures/{{item.channel.id}}?type=original&height=214.500000&width=150.000000" alt=""></li>
+                        <li>Thá»�i sá»±(45p)</li>
+                    </ul>
+                    <h3>Cup C1: <br>Barca - Real Madrid</h3>
+                    <p><img src="" alt="">CÃ²n 15p</p>
+                    <div class="slide-minute"><span style="width:60%;"></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+</slick>

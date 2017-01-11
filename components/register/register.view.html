@@ -1,0 +1,97 @@
+<div class="pp-wrp">
+    <div class="top-pp"><h4>Đăng ký</h4></div>
+    <div class="pp-content">
+        <form name="registerForm" novalidate>
+            <div ng-switch="vm.step" >
+                <div ng-switch-when="one" class="wave">
+                    <div class="form-group" ng-class="{ 'has-error': registerForm.phone.$touched && registerForm.phone.$invalid }">
+                        <input type="phone" name="phone" class="form-control" id="" placeholder="Phone number" required ng-model="vm.userAccount.id" ng-minlength="9" ng-maxlength="15">
+                        <div class="help-block" ng-messages="registerForm.phone.$error" ng-if="registerForm.phone.$touched">
+                            <p ng-message="minlength">Your phone is too short.</p>
+                            <p ng-message="maxlength">Your phone is too long.</p>
+                            <p ng-message="required">Your phone is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': registerForm.password.$touched && registerForm.password.$invalid }">
+                        <input type="password" name="password" class="form-control" id="" placeholder="Password" ng-model="vm.userAccount.password" required ng-minlength="6" ng-maxlength="50">
+                        <div class="help-block" ng-messages="registerForm.password.$error" ng-if="registerForm.password.$touched">
+                            <p ng-message="minlength">Password is too short.</p>
+                            <p ng-message="maxlength">Password is too long.</p>
+                            <p ng-message="required">Password is required.</p>
+                        </div>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error': registerForm.cofirmPass.$touched && registerForm.cofirmPass.$invalid || (registerForm.cofirmPass.$viewValue != registerForm.password.$viewValue) }">
+                        <input type="password" name="cofirmPass" class="form-control" id="" placeholder="Confirm Password" ng-model="vm.userAccount.confirmPass" required ng-minlength="6" ng-maxlength="50">
+                        <div class="help-block" ng-messages="registerForm.cofirmPass.$error" ng-if="registerForm.cofirmPass.$touched">
+                            <p ng-message="minlength">Confirm password is too short.</p>
+                            <p ng-message="required">Confirm password is required.</p>
+                            <p ng-message="maxlength">Confirm password is too long.</p>
+                            <p ng-show="(registerForm.cofirmPass.$viewValue != registerForm.password.$viewValue)">Confirm password must math New password.</p>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="form-group" style="text-align: center" ng-class="{ 'has-error': registerForm.checkTerm.$touched && registerForm.checkTerm.$invalid }">
+                        <span><input type="checkbox" value="" id="checkTerm"  class="form-control" ng-model="vm.checkTerm" name="checkTerm" ng-required="true" /> Đồng ý với "Điều khoản" sử dụng ViettelTV</span>
+                     
+                        <div class="help-block" ng-messages="registerForm.checkTerm.$error" ng-if="registerForm.checkTerm.$touched">
+                            <p ng-message="required">Vui lòng đồng ý với điều khoản sử dụng ViettelTV</p>
+                        </div>
+                    </div>
+                    <br/>
+                    <p ng-if="(vm.resultMsg !== '')" class="pt-login-tt">
+                        {{vm.resultMsg}}
+                    </p>
+                    <hr class="line-pp">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-default" ng-click="vm.register()" ng-disabled="registerForm.checkTerm.$invalid || !registerForm.$valid || (registerForm.cofirmPass.$viewValue != registerForm.password.$viewValue)">Đăng ký</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="" class="btn btn-default" ng-click="vm.closeRegisterModal()">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+                <div ng-switch-when="two" class="wave">
+                    <div class="form-group" ng-class="{ 'has-error': registerForm.phone.$touched && registerForm.phone.$invalid }">
+                        <input type="code" name="code" class="form-control" id="exampleInputEmail1" placeholder="Mã xác nhận" required ng-model="vm.userAccount.code" ng-minlength="4">
+                        <!--<input type="button" value="Request Code"/>-->
+                        <div class="help-block" ng-messages="registerForm.code.$error" ng-if="registerForm.code.$touched">
+                            <p ng-message="minlength">Mã xác nhận không hợp lệ.</p>
+                            <p ng-message="maxlength">Mã xác nhận không hợp lệ.</p>
+                            <p ng-message="required">Vui lòng nhập mã xác nhận.</p>
+                        </div>
+                    </div>
+                    <p ng-if="(vm.resultMsg !== '')" class="pt-login-tt">
+                        {{vm.resultMsg}}
+                    </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <button type="submit" class="btn btn-default" ng-click="vm.completeRegister()">Hoàn thành</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="" class="btn btn-default" ng-click="vm.closeRegisterModal()">Đóng</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--                <div ng-switch-when="four" class="wave">
+                                    <h2>Vui lòng nhập mã kết nối</h2>
+                                    <div class="form-group" ng-class="{ 'has-error': registerForm.phone.$touched && registerForm.phone.$invalid }">
+                                        <input type="code" name="code" class="form-control" id="exampleInputEmail1" placeholder="Mã xác nhận" required ng-model="vm.userAccount.code" ng-minlength="4">
+                                        <input type="button" value="Request Code"/>
+                                        <div class="help-block" ng-messages="registerForm.code.$error" ng-if="registerForm.code.$touched">
+                                            <p ng-message="minlength">Your name is too short.</p>
+                                            <p ng-message="maxlength">Your name is too long.</p>
+                                            <p ng-message="required">Your name is required.</p>
+                                        </div>
+                                    </div>
+                
+                                    <button type="submit" class="btn btn-default" ng-click="vm.pairWithSTB()">Complete Register</button>
+                                </div>-->
+            </div>
+        </form>
+    </div>
+</div>
+

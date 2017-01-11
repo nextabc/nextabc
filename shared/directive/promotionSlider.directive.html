@@ -1,0 +1,4 @@
+<slick  class="{{::cssclass}}" settings="slicksettings"  init-onload="true" data="slickdata" id="slider-top" ng-if="::probannerlist.length">
+    <div class="banner-item" ng-repeat="probanner in ::probannerlist"><img class="banner-img" data-lazy="{{::probanner.img}}" alt="" go-and-refresh-state='vd,{{::probanner.vodId}}'/></div>
+</slick>
+<div class="banner-cover"></div>

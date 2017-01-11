@@ -1,0 +1,67 @@
+.xdsoft_datetimepicker.xdsoft_inline{
+	width: 100%;
+	background: none;
+	border: none;
+	padding: 0;
+}
+.xdsoft_datetimepicker.xdsoft_inline .xdsoft_timepicker:last-child{
+	display: none;
+}
+.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active{
+	width: 100%;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td > div{
+	padding: 18px 10px;
+	text-align: center;
+	background: #c3c5c5;
+	color: #000;
+}
+.xdsoft_datetimepicker .xdsoft_prev{
+	background: url(../img/tvchanel/icon-8.png) no-repeat;
+	width: 11px;
+	height: 16px;opacity: 1;margin-top: 7px;
+}
+.xdsoft_datetimepicker .xdsoft_next{
+	background: url(../img/tvchanel/icon-7.png) no-repeat;
+	width: 11px;
+	height: 16px;opacity: 1;margin-top: 7px;
+}
+.xdsoft_datetimepicker .xdsoft_calendar th{
+	background: #4d4d4d;
+	padding: 10px;
+	font-size: 12px;
+	text-transform: uppercase;
+	color: #fff;
+	font-weight: 300;
+
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current  > div{
+	background: #f3b51b !important;
+	border: none;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td:hover div{background: #f3b51b !important;}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_day_of_week0 div{
+	background: #0d7f80;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month:hover{
+	background: none !important;border: none !important;
+}
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month div{
+	background: #fff;
+	border: none !important;
+}
+.xdsoft_calendar th:last-child{background: #0d7f80 !important;}
+.xdsoft_datetimepicker .xdsoft_month{background: none;}
+.xdsoft_datetimepicker .xdsoft_year{
+	background: none;
+	display: none;
+}
+.xdsoft_today_button{display: none !important;}
+.xdsoft_datetimepicker .xdsoft_month {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    text-align: center;
+    width: 89%;
+    margin-bottom: 10px;
+}
+.xdsoft_label.xdsoft_month > span{text-transform: uppercase;}
+.xdsoft_datetimepicker .xdsoft_datepicker{margin-left: 0;}
