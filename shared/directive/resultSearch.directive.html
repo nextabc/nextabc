@@ -1,0 +1,130 @@
+<div ng-if="resultype == 'movie'">
+    <div class="grid-item" ng-repeat="item in data">
+        <div class="thum-sub-n">
+            <div class="thumbnail thubhover" >
+                <!--<a tabindex="0" ui-sref="vod-detail({vodId:item.program.id})"   href="" class="watch-v">-->
+                <img  ui-sref="vod-detail({vodId:item.program.id})"  ng-src="{{constant.APIHost}}/api1/contents/pictures/{{item.program.id}}?width=150.000000&height=190.500000" />
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.movie.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.movie.currentpage===loadmore.movie.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.movie)" href="">
+            <span>Xem thêm [{{loadmore.movie.currentpage}}/{{loadmore.movie.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>
+<div ng-if="resultype == 'vgroup'">
+    <div class="grid-item" ng-repeat="item in data">
+        <div class="thum-sub-n">
+            <div class="thumbnail thubhover" >
+                <!--<a tabindex="0" ui-sref="vod-detail({vodId:item.id,type:item.type})"  href="" class="watch-v">-->
+                <img ui-sref="vod-series-detail({vodId:item.id,type:item.type})"  ng-src="{{constant.APIHost}}/api1/contents/categories/{{item.id}}/picture?width=150.000000&height=214.500000" />
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.vgroup.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.vgroup.currentpage===loadmore.vgroup.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.vgroup)" href="">
+            <span>Xem thêm [{{loadmore.vgroup.currentpage}}/{{loadmore.vgroup.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>
+<div ng-if="resultype == 'tvshow'" >
+    <div  class="grid-item" ng-repeat="item in data">
+        <div class="thum-sub-n">
+            <div class="thumbnail thubhover" >
+                <!--<a tabindex="0"  ui-sref="vod-detail({vodId:item.program.id})"  href="" class="watch-v">-->
+                <img  ui-sref="vod-detail({vodId:item.program.id})"  ng-src="{{constant.APIHost}}/api1/contents/pictures/{{item.program.id}}?width=150.000000&height=214.500000" />
+                <!--</a>-->
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.tvshow.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.tvshow.currentpage===loadmore.tvshow.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.tvshow)" href="">
+            <span>Xem thêm [{{loadmore.tvshow.currentpage}}/{{loadmore.tvshow.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>
+
+<div ng-if="resultype == 'channel'">
+    <div class="" >
+        <div class="col-sm-12">
+            <div class="col-list-tin" >
+                <ul>
+                    <li class="channel_result" ng-repeat="item in data">
+                        <a  ui-sref="channel({ id: item.channel.id, service_id: item.service_id })" href="" >
+                            <span><img ng-src="{{constant.APIHost}}/api1/contents/pictures/{{item.channel.id}}?type=original&height=214.500000&width=150.000000">
+                            </span>
+                            <!--<p>{{item.channel.name[0].text}}</p>-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.channel.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.channel.currentpage===loadmore.channel.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.channel)" href="">
+            <span>Xem thêm [{{loadmore.channel.currentpage}}/{{loadmore.channel.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>
+
+<!--<div ng-if="resultype == 'schedule'" >
+    <div class="wrp-div"    ng-repeat="item in data">
+        <div class="col-mk-p-search">
+            <div class="mk-zip">
+                <div class="klj-img">
+                    <a href="" class="thumb-ikm"><img style="height: 158px; width: 280px" src="assets/img/tvchanel/aaaaaaaaaaaaaaaaaaa.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="detail-ck">
+                <a href=""  ui-sref="channel({ catchup_id: (item.start_time +'_'+ item.channel.pid+'_'+ item.pid )})" >
+                    <ul>
+                        <li><img src="{{constant.APIHost}}/api1/contents/pictures/{{item.channel.id}}?type=original&height=13.000000&width=42.000000" /></li>
+                        <li>{{item.start_time.split(":")[0].substring(0,10)}}</li>
+                    </ul>
+                    <h3>{{ item.title[0].text }}</h3>
+                    <p><img src="assets/img/tvchanel/icon-9.png" alt=""> {{item.start_time.split(":")[0].substring(11)}}:{{item.start_time.split(":")[1]}} - {{item.end_time.split(":")[0].substring(11)}}:{{item.end_time.split(":")[1]}}</p>                   
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.schedule.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.schedule.currentpage===loadmore.schedule.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.schedule)" href="">
+            <span>load more [{{loadmore.schedule.currentpage}}/{{loadmore.schedule.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>-->
+<!--<div ng-if="resultype == 'catchup'" >
+    <div class="wrp-div"    ng-repeat="item in data">
+        <div class="col-mk-p-search">
+            <div class="mk-zip">
+                <div class="klj-img">
+                    <a href="" class="thumb-ikm"><img style="height: 158px; width: 280px" src="assets/img/tvchanel/aaaaaaaaaaaaaaaaaaa.png" alt="" /></a>
+                </div>
+            </div>
+            <div class="detail-ck">
+                <a href=""  ui-sref="channel({ catchup_id: (item.start_time +'_'+ item.channel.pid+'_'+ item.pid ),id:item.channel.id})" >
+                    <ul>
+                        <li><img ng-src="{{constant.APIHost}}/api1/contents/pictures/{{item.channel.id}}?type=original&height=13.000000&width=42.000000" /></li>
+                        <li>{{item.start_time.split(":")[0].substring(0,10)}}</li>
+                    </ul>
+                    <h3>{{item.title[0].text}}</h3>
+                    <p><img src="assets/img/tvchanel/icon-9.png" alt=""> {{item.start_time.split(":")[0].substring(11)}}:{{item.start_time.split(":")[1]}} - {{item.end_time.split(":")[0].substring(11)}}:{{item.end_time.split(":")[1]}}</p>                   
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="wp-loadmore" ng-if="loadmore.catchup.isloadmore > 0">
+        <div class="loadmore-f" ng-class="(loadmore.catchup.currentpage===loadmore.catchup.totalpage)? 'disable_loadmore':''" ng-click="loadmore.getLoadmore(loadmore.catchup)" href="">
+            <span>load more [{{loadmore.catchup.currentpage}}/{{loadmore.catchup.totalpage}}]
+            </span>
+        </div>
+    </div>
+</div>-->

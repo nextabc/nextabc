@@ -1,0 +1,43 @@
+<div class="slider-thumb4 slide_run1 slide_run_f1">
+   <div  class="sli" ng-repeat="vod in videolist">
+      <div class="thum-sub-n">
+         <!--<span class="new"></span>-->
+         <!--<span ng-if="{{vod.program.icons[0]}}" class="{{vod.program.icons[0]}}"></span>-->
+         <div class="thumbnail thubhover">
+<!--            <div class="caption" style="display: none;">
+               <h4>{{vod.name[0].text.length < 41?vod.name[0].text:vod.name[0].text.substring(0,39) + '...'}}</h4>
+               <ul class="list-rate">
+                  <li><a href="" tabindex="0"><img alt="" src="assets/img/saonho.png"></a></li>
+                  <li><a href="" tabindex="0"><img alt="" src="assets/img/saonho.png"></a></li>
+                  <li><a href="" tabindex="0"><img alt="" src="assets/img/saonho.png"></a></li>
+                  <li><a href="" tabindex="0"><img alt="" src="assets/img/saonho.png"></a></li>
+                  <li><a href="" tabindex="0"><img alt="" src="assets/img/saonho.png"></a></li>
+                  <li class="right-u"><span class="hd">HD</span><span class="tm">TM</span></li>
+               </ul>
+               <table>
+                  <tbody>
+                     <tr>
+                        <td class="first-td">Giá</td>
+                        <td class="last-td">{{vod.product[1].price[0].value}} {{vod.product[1].price[0].currency| lowercase}}</td>
+                     </tr>
+                     <tr>
+                        <td class="first-td">Khuyến mại</td>
+                        <td class="last-td"></td>
+                     </tr>
+                     <tr>
+                        <td class="first-td">Gia sau KM</td>
+                        <td class="last-td"></td>
+                     </tr>
+                  </tbody>
+               </table>
+               <a class="watch-v" go-and-refresh-state='vd,{{vod.program.id}}' tabindex="0">WATCH</a>
+               <ul class="list-trailer">
+                  <li><a go-and-refresh-state='vd,{{vod.program.id}}'  tabindex="0">Trailer</a></li>
+                  <li><a go-and-refresh-state='vd,{{vod.program.id}}' tabindex="0">Detail</a></li>
+               </ul>
+            </div>-->
+            <img alt="" class="lazyOwl img-sli" go-and-refresh-state='vsd,{{vod.program.categories[0].id}},program,{{vod.program.id}}' lsrc="{{::constant.APIHost}}/api1/contents/pictures/{{vod.program.id}}?width=150.000000&height=214.500000"/>
+         </div>
+      </div>
+   </div>
+</div>

@@ -1,0 +1,47 @@
+
+<div id="lichphatsong" class="title-list-date-tv">
+    <slick class="time-clange" settings="time_change">
+        <div class="time-tvv {{item.dateConpare === vm.selectedDate?'active':''}} {{(item.isToday)?'today':''}}" ng-repeat="item in vm.rangeGuide" ng-click="getSelectedDate(item.date, null)">
+            <span class="day-f">{{item.dayOfW}}</span>
+            <span class="day-h">{{item.datetext}}</span>
+        </div>
+    </slick>
+</div>
+
+<!--<div class="title-mb-d">
+    <slick class="time-clange" settings="time_change"  ng-if="vm.channelListLoaded" init-onload="true" data="{{vm.channelListLoaded}}" >
+        <div class="time-tvv {{item.dateConpare === vm.selectedDate?'active':''}} {{(item.isToday)?'today':''}}" ng-repeat="item in vm.rangeGuide" ng-click="getSelectedDate(item.date, null)">
+            <span class="day-f">{{item.dayOfW}}</span>
+            <span class="day-h">{{item.datetext}}</span>
+        </div>
+    </slick>
+</div>-->
+
+<div class="content-list-tv">
+        <div  class="tab-v1 scroll-pane">
+        <ul>
+            <li  ng-repeat="item in vm.channelGuide" ng-class="item.is_playing">
+                <div class="left-v1"><span>{{item.time}}</span></div>
+                <div class="left-v2">
+                    <a href=""><span>{{item.program1}}</span>
+                        <p>{{item.program2}}</p></a>
+                </div>
+                
+<!--                <div class="left-v3"  ng-switch on="item.is_tvod" >
+                    <a class="icon_3" href="" ng-switch-when="1"  ng-click="vm.getCatchupStream(item.catchup_id)" >
+                        <image src="assets/img/tvchanel/icon-3.png" alt="" onmouseover="this.src = 'assets/img/tvchanel/icon-4.png'"
+                               onmouseout="this.src = 'assets/img/tvchanel/icon-3.png'"/> 
+                    </a>
+                    <a class="icon_5" href="" ng-switch-when="0" >
+                        <image src="assets/img/tvchanel/icon-5.png" alt="" onmouseover="this.src='assets/img/tvchanel/icon-6.png'"
+                            onmouseout="this.src='assets/img/tvchanel/icon-5.png'"/> 
+                    </a>
+                </div>-->
+
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class="lichphatsong" id="tivcat"><span>Lịch phát sóng</span></div>

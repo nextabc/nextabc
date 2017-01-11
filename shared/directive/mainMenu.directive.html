@@ -1,0 +1,43 @@
+<nav class="menu-top">
+    <div class="container  fix-container">
+        <nav class="navbar navbar-inverse">
+            <div class="navbar-header">
+                <a class="navbar-brand" ng-click="vm.goToHomeIndex()" href=""><img src="assets/img/logo.png" alt=""></a>
+            </div>
+            <div class="collapse navbar-collapse js-navbar-collapse" id="sidebar">
+                <ul class="nav navbar-nav" ng-if="vm.menuArray.length" id="main_menu">
+                    <li class="dropdown mega-dropdown menu-c1-li item-active" id="menu-c1-0" menu-id="{{::vm.menuArray[0].this.id}}">
+                        <a href="" ng-click="vm.gotoMenu(vm.menuArray[0],0)" class="menu-c1">{{::vm.menuArray[0].this.name[0].text}}</a>
+                    </li>
+                    <li class="dropdown mega-dropdown menu-c1-li" ng-repeat="menu1 in ::vm.menuArray " ng-init="level1Index = $index" ng-if="menu1.this.path_id !== '\/INDEX' && menu1.this.path_id !== '\/WEB_HOME' && $index!=6 && $index!=7" id="menu-c1-{{$index}}" menu-id="{{::menu1.this.id}}">
+                        <a ng-if="(menu1.this.type === '__menu' || menu1.this.type === 'channel')
+                        && menu1.this.path_id !== '/other_khac'" href="" ng-click="vm.gotoMenu(menu1,$index)" class="menu-c1">{{::menu1.this.name[0].text}}</a>
+                        <a ng-if="menu1.this.path_id === '/other_khac'" href="" class="dropdown-link menu-c1">{{::menu1.this.name[0].text}}</a><span ng-if="::menu1.this.type === '__menu'" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"
+                            class="drp-mn"><span ng-if="::menu1.this.type === '__menu'" class="caret"></span></span>
+                    </li>
+                    <li class="service-info" ng-if="app.isLogged">
+                        <ul class="service-list">
+                            <li>
+                                <a href="" ng-click="app.openChangePassDialog('changePass')"><img src="assets/img/icon-key.png" />Đổi mật khẩu</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="app.logout()"><img src="assets/img/icon-key4.png" />Đăng xuất</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="wp-search sucess" id="searchId">
+                <div class="search nav navbar-nav navbar-right" id="searh-top">
+                </div>
+                <div class="dropdownfix" id="loggedId" ng-if="app.isLogged">
+                    <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><img class="img-sli-drop" src="assets/img/idex/top1.png" alt="" width="20px"> <span class="name_po"> {{app.userDisplayName}}</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        <!-- /.nav-collapse -->
+    </div>
+
+
+</nav>

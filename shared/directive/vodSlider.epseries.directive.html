@@ -1,0 +1,36 @@
+<!-- <div class="slider-action-new"> -->
+<slick  class="{{::cssclass}}" settings="slicksettings"   init-onload="true" data="slickdata" ng-if="::videolist.length">
+    <div class="sli" ng-repeat="vod in ::videolist track by vod.id">
+        <div class="thum-sub-new" ui-sref='vod-detail({vodId:vod.program.id})'>
+            <div class="ac-hv">
+    
+            <img alt="" class="img-sli slider-hover" go-and-refresh-state='vsd,{{vod.program.categories[0].id}},series,{{vod.program.id}}' src="{{::constant.APIHost}}/api1/contents/pictures/{{vod.program.id}}"/>
+            
+            </div>
+            <div class="hover-ac">
+                
+            <img alt="" class="img-sli slider-hover" go-and-refresh-state='vsd,{{vod.program.categories[0].id}},series,{{vod.program.id}}' src="{{::constant.APIHost}}/api1/contents/pictures/{{vod.program.id}}"/>
+                <i class="icon icon-play-white play parallax-item"></i>
+                <div class="content">
+                    <div class="title">
+                        <div class="title-wrapper">
+                            <h2 class="inner ng-binding">{{::vod.program.title[0].text}}</h2>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <span class="cc">
+                            <i class="icon icon-cc-white ng-scope"></i>
+                        </span>
+                        <span class="hd">
+                            <i  class="icon icon-hd-white ng-scope"></i>
+                        </span>
+                    </div>
+                    <div  class="description ng-scope">
+                        <div class="inner ng-binding">{{::vod.program.synopsis[0].text}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- </div> -->
+</slick>

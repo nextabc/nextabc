@@ -1,0 +1,13 @@
+<slick  class="{{::cssclass}}" settings="slicksettings"  init-onload="true" data="slickdata" ng-if="::itemlist.length">
+<!--<slick  class="slider-tv" settings="channeltv_slide"  ng-if="vm.channelListLoaded" init-onload="true" data="{{vm.channelListLoaded}}" ng-cloak>-->
+    <div ng-repeat="item in ::itemlist">
+        <a ui-sref="channel({ id: item.channel.id,service_id:item.service_id })" href="" >
+            <img ng-src="{{::constant.APIHost}}/api1/contents/pictures/{{::item.channel.id}}?type=original" alt="{{::item.channel.name[0].text}}" class="lazyOwl"  />
+        </a>
+    </div>
+<!--    <div ng-if="!isChannelHome" ng-repeat="item in itemList">
+        <a ng-click="vm.getChannelChange(item.channel.id,item.service_id)" href="" >
+            <img src="{{Constant.APIHost}}/api1/contents/pictures/{{item.channel.id}}?type=original&width=72.000000&height=26.000000" alt="{{item.channel.name[0].text}}" class="lazyOwl"  />
+        </a>
+    </div>-->
+</slick>

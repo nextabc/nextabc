@@ -1,0 +1,29 @@
+<div class="home vod main-wrap " ng-cloak>
+<div class="{{$index === 0?'row-fill fix-thumb fill01':'row-fill fix-thumb'}}" ng-repeat="item in vm.vodArray track by $index" ng-if="app.isLargeDevice && !item.isRecommend">
+    <div class="col-sm-12">
+        <div class="tilt-pk">
+                        <h4 ><a id="slider_cate_{{$index}}" class="slider_cate" href="" ng-click="vm.gotoMenu(item)">{{::item.menu.this.name[0].text}}</a></h4>
+        </div>
+        <div class="scroll-thumb" >
+            <vodslider id="slider-{{$index}}" ng-if="!item.isSeriesCategory" slidename="one_line_slide" cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+            <vodslider id="slider-{{$index}}" ng-if="::item.isSeriesCategory" slidename="series_vod_slide"  cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+        </div>
+    </div>
+</div>
+<div class="row-fill fix-thumb" ng-repeat="item in vm.vodArray track by $index" ng-if="!app.isLargeDevice">
+    <div class="col-sm-12">
+        <div class="tilt-pk">
+                        <h4 ><a id="slider_cate_{{$index}}" class="slider_cate" href="" ng-click="vm.gotoMenu(item)">{{::item.menu.this.name[0].text}}</a></h4>
+        </div>
+        <div class="scroll-thumb" >
+            <vodslider id="slider-{{$index}}" ng-if="!item.isSeriesCategory" slidename="one_line_slide" cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+            <vodslider id="slider-{{$index}}" ng-if="::item.isSeriesCategory" slidename="series_vod_slide"  cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+        </div>
+    </div>
+</div>
+
+<!-- </div> -->
+</div>
+
+<!-- END Main -->
+<script type="text/javascript" src="assets/js/update-data-ui.js"></script>

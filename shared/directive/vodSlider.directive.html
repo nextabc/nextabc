@@ -1,0 +1,38 @@
+<!-- <div class="slider-action-new"> -->
+<slick class="{{::cssclass}}" settings="slicksettings" init-onload="true" data="slickdata" ng-if="::videolist.length">
+
+    <div class="sli" ng-repeat="vod in ::videolist track by vod.id">
+        <div class="thum-sub-new" ui-sref='vod-detail({vodId:vod.program.id})'>
+            <div class="ac-hv">
+                <img alt="" width="115" height="210" class="img-sli slider-hover lazy" ui-sref='vod-detail({vodId:vod.program.id})' data-src="{{::constant.APIHost}}/api1/contents/pictures/{{::vod.program.id}}?width=215.000000&height=307.000000" />
+            </div>
+            <div class="hover-ac">
+                <img alt="" class="lazyOwl img-sli slider-hover lazy" ui-sref='vod-detail({vodId:vod.program.id})' data-src="{{::constant.APIHost}}/api1/contents/pictures/{{::vod.program.id}}?width=215.000000&height=307.000000" />
+                <i class="icon icon-play-white play parallax-item"></i>
+
+                <div class="content">
+                    <div class="title">
+                        <div class="title-wrapper">
+                            <h2 class="inner ng-binding">{{::vod.program.title[0].text}}</h2>
+                        </div>
+                    </div>
+                    <div class="meta">
+                        <span class="cc">
+                            <i class="icon icon-cc-white ng-scope"></i>
+                        </span>
+                        <span class="hd" ng-if="::vod.content_format === 'HD'">
+                            <i  class="icon icon-hd-white ng-scope"></i>
+                        </span>
+                        <span class="hd">
+                            <i  class="duration">{{::vod.duration}}p.</i>
+                        </span>
+                    </div>
+                    <div class="description ng-scope">
+                        <div class="inner ng-binding">{{::vod.program.synopsis[0].text}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- </div> -->
+</slick>

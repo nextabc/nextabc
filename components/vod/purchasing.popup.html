@@ -1,0 +1,73 @@
+<div ng-switch="vm.getCurrentStep()" >
+    <div class="pp-wrp"  ng-switch-when="one">
+        <div class="pp-content">
+            <h4>Mua VOD</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="">
+                        <div class="form-group">
+                            <p>Bạn tiêu dùng vượt quá hạn mức bạn thiết lập <b>{{vm.limitPaidAmount}} </b>. Bạn có đồng ý tiếp tục mua?</p>
+                            <button class="btn btn-default" ng-click="vm.handleNext()">
+                                Đồng ý
+                            </button>
+                            <p></p>
+                            <!--<p>* In case that you alreay have ViettelTV Set-Top-Box. Recommended for customer who alreay buy ViettelTV Set-Top-Box</p>-->
+                            <button class="btn btn-default" ng-click="vm.buySingleVOD()" >
+                                Hủy
+                            </button>
+                            <!--<P>* In case that you dont have a ViettelTV Set-Top-Box or you want to have an account independent from a Set-Top-Box</p>-->
+                            <a href="" class="dolate">Do it later</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-wrp"  ng-switch-when="two">
+        <div class="pp-content">
+            <h4>Mua VOD</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="">
+                        <div class="form-group">
+                            <p>Chọn phương án thanh toán:</p>
+                            <button class="btn btn-default" ng-click="vm.buySubscriptionVOD()" ng-if="vm.isSubscriptionVOD">
+                                Mua gói với giá {{vm.userLevel === 'FLEXI'? vm.finalSubPriceVND + ' VND':vm.finalSubPricePNT + ' FX Point'}}
+                            </button>
+                            <p></p>
+                            <!--<p>* In case that you alreay have ViettelTV Set-Top-Box. Recommended for customer who alreay buy ViettelTV Set-Top-Box</p>-->
+                            <button class="btn btn-default" ng-click="vm.buySingleVOD()" ng-if="vm.isSingleVOD">
+                                Mua lẻ với giá {{vm.userLevel === 'FLEXI'? vm.finalSinglePriceVND + ' VND':vm.finalSinglePricePNT + ' FX Point'}}
+                            </button>
+                            <!--<P>* In case that you dont have a ViettelTV Set-Top-Box or you want to have an account independent from a Set-Top-Box</p>-->
+                            <a href="" class="dolate">Do it later</a>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pp-wrp" ng-switch-when="three" >
+        <div class="pp-content">
+            <h4>Xác nhận mua</h4>
+            <div class="row">
+                <div class="col-md-12">
+                    <form action="">
+                        <div class="form-group">
+                            <p>Bạn có đồng ý mua:</p>
+                            <button class="btn-connect">
+                                Đồng ý 
+                            </button>
+                            <button class="btn-connect">
+                                Hủy
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

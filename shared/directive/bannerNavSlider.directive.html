@@ -1,0 +1,38 @@
+<slick  class="{{::cssclass}}" settings="slicksettings"  init-onload="true" data="slickdata" ng-if="::videolist.length">
+	<div class="vod-slider-sli" ng-repeat="probanner in videolist">
+		<div class="vod-thumb">
+			<div class="vod-thumb-cover">
+				<img alt=""  class="vod-sli-img" ui-sref='vod-detail({probanner.vodId})'  data-lazy="{{probanner.img}}"/>
+			</div>
+			<div class="vod-thumb-hover">
+				<img alt=""  class="vod-sli-img" ui-sref='vod-detail({probanner.vodId})'  data-lazy="{{probanner.img}}"/>
+				<i class="icon-while"></i>
+				<div class="vod-hover-content">
+					<!-- <div class="vod-title-wrapper">
+						<div class="vod-title">
+							<h2 class="h2-title">To</h2>
+						</div>
+					</div>
+					<div class="vod-info">
+						<span class="vod-cc">
+							<i class="icon-vod-cc"></i>
+						</span>
+						<span class="vod-hd">
+							<i class="icon-vod-hd">
+								
+							</i>
+						</span>
+					</div>
+					<div class="vod-desc">
+						<p class="vod-desc-detail">
+							{{::vod.program.synopsis[0].text}}
+						</p>
+					</div> -->
+
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</slick>
+<!-- <div class="bo-banner-cover"></div> -->

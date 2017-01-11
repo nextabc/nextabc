@@ -1,0 +1,24 @@
+<div class="vodcat vod main-wrap " ng-cloak>
+    <!-- BANNER -->
+
+             <div class="{{$index === 0?'row-fill fix-thumb fill01':'row-fill fix-thumb'}} slider_cover" ng-repeat="item in vm.vodArray track by $index" ng-if="app.isLargeDevice && !item.isRecommend && (item.contents.length > 0)">
+                <div class="col-sm-12">
+                    <div class="tilt-pk">
+                        <h4 ><a id="slider_cate_{{$index}}" class="slider_cate" href="" ng-click="vm.gotoMenu(item)">{{::item.menu.this.name[0].text}}</a></h4>
+<!--                         <a ng-if="item.contents.length" class="view-all-d" href="" ng-click="vm.gotoMenu(item)">Xem tất cả</a> -->
+                    </div>
+                    <div class="scroll-thumb" > 
+                        <vodslider id="slider-{{$index}}" ng-if="!item.isSeriesCategory"  slidename="one_line_slide"    cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+                        <vodslider id="slider-{{$index}}" ng-if="::item.isSeriesCategory" slidename="series_vod_slide"  cssclass="slider-action-new" videolist="item.contents" slicksettings="slider_action_new" slickdata="item.isDataLoaded" ></vodslider>
+                    </div>
+                </div>
+        </div>
+
+    
+</div>
+
+<!-- END Main -->
+
+<!-- END Footer -->
+
+<script type="text/javascript" src="assets/js/update-data-ui.js"></script>

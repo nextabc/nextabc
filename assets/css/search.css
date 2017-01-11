@@ -1,0 +1,134 @@
+
+.list-seartch{
+	display:block; z-index:10;
+	
+	float:left;
+	padding:10px 10px 0;
+	width: 100%;
+}
+.filter-as{
+	position: absolute;
+    z-index: 10;
+    top: 45px;
+    width: 100%;
+    left: 0px;
+	padding:15px 0 5px;
+	background: rgba(0, 0, 0, 0.9);
+	display:none;
+	    border: 1px solid #6d6964;
+	border-top:none;
+}
+.list-seartch li:first-child{padding-top:0;}
+.list-seartch li{
+	width:100%;
+	float:left;
+	padding:10px 0 0;
+}
+.list-seartch li a{
+	color:#fff;
+	text-transform: uppercase;
+}
+.list-seartch li a:hover{color:#fcc115;}
+.list-seartch li span {
+    display: block;
+    font-size: 11px;
+}
+.list-seartch li img{
+	float:left;
+	max-width:50px;
+	margin-right:10px;
+}
+.filter-scroll {
+	max-height:300px;
+	overflow:auto;
+	width: 100%;
+}
+.filter-scroll .jspTrack{
+	background:#C1C1C1;
+	width:7px;
+	border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+}
+.filter-scroll .jspDrag{
+	width:5px;
+	background:#fcc115;
+	margin-left:1px;
+	border-radius: 20px 20px 20px 20px;
+-moz-border-radius: 20px 20px 20px 20px;
+-webkit-border-radius: 20px 20px 20px 20px;
+}
+.filter-scroll .jspVerticalBar{width:7px;background:none;}
+.detail-search{
+	padding: 15px 10px 0;
+	border-top: 1px solid #6d6964;
+}
+.filter-op{padding-bottom:20px;}
+.detail-search a{color:#fff; cursor:pointer;    text-align: center;}
+.detail-search a:hover{color:#fcc115;}
+.filter-scroll,.filter-scroll .jspContainer,.filter-scroll.jspPane{width:100% !important}
+.custom-search-form #filter{
+	
+	border-radius: 2px 2px 2px 2px;
+-moz-border-radius: 2px 2px 2px 2px;
+-webkit-border-radius: 2px 2px 2px 2px;
+	border:none;
+	background:none;
+	color:#fff;
+	
+	width:20px;
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.custom-search-form #filter.newsearch{
+width:100%;display:block;
+background:#464646;
+}
+.custom-search-form .btn{
+border-radius: 0px 5px 5px 0px;
+-moz-border-radius: 0px 5px 5px 0px;
+-webkit-border-radius: 0px 5px 5px 0px;
+-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.custom-search-form .btn:focus{
+	outline:none;
+	-webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+}
+.custom-search-form .input-group-btn .btn{
+	background: none;
+    border: none;
+    position: absolute;
+    top: -1px;
+    right: 11px;
+	z-index:10;
+}
+.custom-search-form {
+    color: #2b292c;
+    width: 100%;
+}
+@media screen and (min-width: 991px) and (max-width: 1260px) {
+	.filter-as{top:45px;}
+	.filter-scroll,.filter-scroll .jspContainer,.filter-scroll.jspPane{width:100% !important}
+}
+@media screen and (min-width: 768px) and (max-width: 991px) {
+	.filter-as{top:36px;}
+	.filter-scroll,.filter-scroll .jspContainer,.filter-scroll.jspPane{width:100% !important}
+}
+@media screen and  (max-width: 767px) {
+	.search{top:8px;}
+	.filter-as{top:42px;}
+	.filter-as{width:120%;}
+	.filter-scroll,.filter-scroll .jspContainer,.filter-scroll.jspPane{width:100% !important}
+}
+@media screen and (min-width: 320px) and (max-width: 479px) {
+	.search{top:-31px;}
+	.filter-as {
+		top: 40px;
+	}
+	.filter-as{width:150%;}
+}
